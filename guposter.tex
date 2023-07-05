@@ -1,0 +1,74 @@
+\documentclass{guposter}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage[normalem]{ulem}
+\usepackage[inline]{enumitem}
+\setlist{noitemsep} 
+
+\title{\parbox{\linewidth}{The typically very long title of your paper of whatever it is that you are making a poster about}}
+\author{First Author, Second Author and Possibly More}
+\institute{Your research group, your department, University of Gothenburg}
+
+
+\begin{document}
+\maketitle
+
+% Tip: for long titles, use \parbox{\linewidth}{text}
+
+\block{Abstract}{
+    Or anything else that you don't want to display in a two-column format.
+}
+
+\begin{columns}
+\column{0.5}
+
+\block{A block}{
+
+    Each block can contain:
+
+    \begin{itemize}
+        \item text
+        \item lists, like this one
+        \item \sout{tables} actually, for some reason that doesn't work
+        \item images, like the one in the block below
+    \end{itemize}
+}
+
+\block{Another block with an image}{
+    \begin{center}
+        \includegraphics[width=0.25\textwidth]{images/logo}
+    \end{center}
+}
+
+\block{A block with sub-blocks}{
+    Each block can contain however many inner blocks.
+
+    \innerblock{An inner block}{
+        This is the first inner block.
+    }
+
+    \innerblock{Another inner block}{
+        This is the second and last inner block.
+    }
+}
+
+\column{0.5}
+
+\block{}{
+    Blocks don't necessarily always have a title.
+}
+
+\begingroup
+\colorlet{framecolor}{gublue}
+\block{A block with a blue frame}{
+    This sticks out a little bit more.
+}
+\endgroup
+
+\block{The final block with credits}{
+    This template is largely based on the SINTEF poster template (see \texttt{www.overleaf.com/latex/templates/sintef-poster/hksprrptfntf}).
+}
+
+\end{columns}
+\end{document}
+
