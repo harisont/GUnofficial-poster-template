@@ -4,6 +4,8 @@
 \usepackage[normalem]{ulem}
 \usepackage[inline]{enumitem}
 \setlist{noitemsep} 
+\usepackage{booktabs}
+\usepackage{caption}
 
 \title{\parbox{\linewidth}{The typically very long title of your paper of whatever it is that you are making a poster about}}
 \author{First Author, Second Author and Possibly More}
@@ -29,7 +31,7 @@
     \begin{itemize}
         \item text
         \item lists, like this one
-        \item \sout{tables} actually, for some reason that doesn't work
+        \item tables (but put your \texttt{tabular}s inside \texttt{minipage}s, not \texttt{table}s!)
         \item images, like the one in the block below
     \end{itemize}
 }
@@ -39,6 +41,23 @@
         \includegraphics[width=0.25\textwidth]{images/logo}
     \end{center}
 }
+
+\block{A third 1-column block with a tiny table}{
+    \begin{minipage}{\linewidth}
+        \centering
+        \resizebox{0.3\columnwidth}{!}{
+            \begin{tabular}{@{}ll@{}}
+                \toprule
+                Column 1 & Column 2 \\ \midrule
+                Cell 1A  & Cell 2A  \\
+                Cell 1B  & Cell 2B  \\
+            \end{tabular}
+        }
+        \captionof{table}{This is a caption}
+    \end{minipage}
+}
+
+\column{0.5}
 
 \block{A block with sub-blocks}{
     Each block can contain however many inner blocks.
@@ -51,8 +70,6 @@
         This is the second and last inner block.
     }
 }
-
-\column{0.5}
 
 \block{}{
     Blocks don't necessarily always have a title.
